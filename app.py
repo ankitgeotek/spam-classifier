@@ -1,7 +1,3 @@
-import subprocess
-subprocess.run(["pip", "install", "nltk"])
-
-
 import streamlit as st
 import pickle
 
@@ -12,6 +8,9 @@ import nltk
 import string
 from nltk.stem.porter import PorterStemmer
 ps = PorterStemmer()
+
+import sys
+print(sys.path)
 
 
 def transform_text(text):
@@ -52,6 +51,7 @@ def transform_text(text):
 tfidf = pickle.load( open('tfidf_vectorizer.pkl', 'rb'))
 model = pickle.load( open('mnb_model.pkl', 'rb'))
 
+st.caption("author: ankitgeotek@gmail.com")
 st.title('Email/SMS Spam Classifier')
 
 input_sms = st.text_input('Enter the message')
