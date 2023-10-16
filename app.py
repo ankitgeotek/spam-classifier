@@ -9,9 +9,7 @@ import string
 from nltk.stem.porter import PorterStemmer
 ps = PorterStemmer()
 
-import sys
-print(sys.path)
-
+nltk.data.path.append("nltk_data")
 
 def transform_text(text):
 
